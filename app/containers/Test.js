@@ -1,4 +1,4 @@
-import React, {useState,useRef} from 'react';
+import React, {useState,useRef,useMemo} from 'react';
 import {View, Text, ActivityIndicator, Button, FlatList} from 'react-native';
 import {globalStyles} from '../styles/style';
 import useFetch from '../hooks/useFetch';
@@ -23,7 +23,7 @@ export default function Test() {
   const [datas, isLoading, isError,setUrl] = useFetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=128ccebef6ac4aa0abd1c38f8576c7d0&page=1`, []);
   //const [news,setNews]= useState([]);
   const articles = datas.articles;
-  const uniqueArticles =filterUniqueActicle(articles);
+  const uniqueArticles =useMemo(filterUniqueActicle(articles),[articles]) 
 
   if (isLoading) {
     return (
