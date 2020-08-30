@@ -2,6 +2,7 @@
 Per Week Assignment For React Native
 =====================================
 <p align='center'>
-  <image source='./assets/product.gif'></image>
+  <image source='./assets/product.gif' />
 </p>
+===============================
 ![](./assets/product.gif)
